@@ -6,6 +6,8 @@ from flask import Flask
 from flask_restful import Api, Resource
 from frad import ArgumentAdder, RequestParser
 
+...
+
 class RegisterResource(Resource):
   @ArgumentAdder('username', type=str, help='Username field cannot be blank!', required=True)
   @ArgumentAdder('password')
@@ -13,4 +15,8 @@ class RegisterResource(Resource):
   def post(self, **kw):
     data = kw.get('data')
     print("username: {username}, password: {password}".format(**data))
+    
+    
+...
+    
 ```
